@@ -1,10 +1,11 @@
 import './App.css';
+import Header from './pages/header/Header';
 
 function App() {
     return (
-        <div>
-            <h1 class="text-center">Hello world</h1>
-        </div>
+        <>
+            <Header/>   
+        </>
     );
 }
 
