@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./PostUser.css";
-import Form  from 'react-bootstrap/form';
-import Button  from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/form';
+import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
 const PostUser = () => {
@@ -19,7 +19,7 @@ const PostUser = () => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
-            [name]:value
+            [name]: value
         })
     }
 
@@ -29,7 +29,7 @@ const PostUser = () => {
         try {
             const res = await fetch("http://localhost:9000/api/employee", {
                 method: "POST",
-                headers: {"Content-Type": "application/json"},
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
             });
 
