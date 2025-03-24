@@ -47,4 +47,14 @@ public class EmployeeController {
             return ResponseEntity.ok(employee);
         }
     }
+
+    @PatchMapping("/employee/{id}")
+    public ResponseEntity<?> updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
+        Employee updateEmployee = employeeService.updateEmployee(id, employee);
+        if (updateEmployee == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        } else {
+            return ResponseEntity.ok(updateEmployee);
+        }
+    }
 }
